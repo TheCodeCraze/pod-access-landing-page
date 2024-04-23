@@ -3,20 +3,27 @@ import styles from "./App.module.css";
 
 export const App = () => {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState({ noEmail: false, invalidEmail: false });
 
   const handleChange = (e) => {
     setEmail(e.target.value);
-    e.target.value === "" ? setError(true) : setError(false);
+    e.target.value
+      ? setError((prev) => ({ ...prev, noEmail: false, invalidEmail: false }))
+      : setError((prev) => ({ ...prev, noEmail: true, invalidEmail: false }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email === "") {
-      setError(true);
+    if (!email) {
+      setError((prev) => ({ ...prev, noEmail: true, invalidEmail: false }));
     } else {
-      alert(`Request sent from ${email}`);
-      setEmail("");
+      if (email.includes("@")) {
+        setError((prev) => ({ ...prev, noEmail: false, invalidEmail: false }));
+        alert(`Request sent from ${email}`);
+        setEmail("");
+      } else {
+        setError((prev) => ({ ...prev, noEmail: false, invalidEmail: true }));
+      }
     }
   };
 
@@ -44,7 +51,7 @@ export const App = () => {
         </p>
         <form className={styles["request-access"]} onSubmit={handleSubmit}>
           <input
-            type="email"
+            type="text"
             className={styles.email}
             placeholder="Email address"
             value={email}
@@ -56,8 +63,11 @@ export const App = () => {
           >
             Request Access
           </button>
-          {error ? (
-            <p className={styles.error}>Oops! Please enter your email</p>
+          {error.noEmail ? (
+            <p className={styles.error}>Oops! Please add your email</p>
+          ) : null}
+          {error.invalidEmail ? (
+            <p className={styles.error}>Oops! Please check your email</p>
           ) : null}
         </form>
         <div className={styles.icons}>

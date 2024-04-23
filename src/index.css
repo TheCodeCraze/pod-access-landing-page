@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  height: 900px;
+  background: #121725;
+  padding: 130px 0 130px 165px;
+  font-family: "Chivo", sans-serif;
+}

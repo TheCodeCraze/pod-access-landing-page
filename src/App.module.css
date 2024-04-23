@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  height: 640px;
+  position: relative;
+}
+
+.image-host {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.image-bg {
+  position: absolute;
+  bottom: -52px;
+  right: 0;
+}
+
+.logo {
+  position: absolute;
+  top: -28px;
+  left: 0;
+}
+
+.text {
+  width: 723px;
+  height: 509px;
+  background: #121725;
+  padding: 88px 58px 0 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 300;
+  color: #54e6af;
+  text-transform: uppercase;
+  line-height: 62px;
+}
+
+.title > span {
+  color: #ffffff;
+}
+
+.description {
+  width: 445px;
+  height: 84px;
+  margin: 24px 0 40px;
+  font-weight: 300;
+  color: #c2cbe5;
+  line-height: 28px;
+}
+
+.request-access {
+  width: 427px;
+  height: 56px;
+  margin-bottom: 64px;
+  border-radius: 28px;
+  position: relative;
+}
+
+.email {
+  width: 100%;
+  height: 100%;
+  background: #2c344b;
+  padding: 14px 172px 14px 32px;
+  font-family: "Chivo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 28px;
+  border: none;
+  outline: none;
+  border-radius: 28px;
+}
+
+.email::placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+}
+
+.cta {
+  width: 162px;
+  height: 46px;
+  background: #54e6af;
+  font-family: "Chivo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #121725;
+  line-height: 28px;
+  border: none;
+  outline: none;
+  border-radius: 28px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: #b3ffe2;
+}
+
+.error {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fb3e3e;
+  position: absolute;
+  bottom: -24px;
+  left: 32px;
+}
+
+.icons {
+  width: 536px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+}
+
+.icon:nth-child(2) {
+  margin: 0 41px 0 40px;
+}
+
+.icon:nth-child(4) {
+  margin-left: 27px;
+}

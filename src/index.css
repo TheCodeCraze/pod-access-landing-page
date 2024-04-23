@@ -18,3 +18,27 @@ body {
   padding: 130px 0 130px 165px;
   font-family: "Chivo", sans-serif;
 }
+
+@media screen and (max-width: 1300px) {
+  body {
+    padding: 130px 0 130px 39px;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  body {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  body {
+    height: 1024px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  body {
+    height: 667px;
+  }
+}

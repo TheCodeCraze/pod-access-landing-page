@@ -7,22 +7,20 @@ export const App = () => {
 
   const handleChange = (e) => {
     setEmail(e.target.value);
-    e.target.value
-      ? setError((prev) => ({ ...prev, noEmail: false, invalidEmail: false }))
-      : setError((prev) => ({ ...prev, noEmail: true, invalidEmail: false }));
+    setError({ noEmail: !e.target.value, invalidEmail: false });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) {
-      setError((prev) => ({ ...prev, noEmail: true, invalidEmail: false }));
+      setError({ noEmail: true, invalidEmail: false });
     } else {
       if (email.includes("@")) {
-        setError((prev) => ({ ...prev, noEmail: false, invalidEmail: false }));
+        setError({ noEmail: false, invalidEmail: false });
         alert(`Request sent from ${email}`);
         setEmail("");
       } else {
-        setError((prev) => ({ ...prev, noEmail: false, invalidEmail: true }));
+        setError({ noEmail: false, invalidEmail: true });
       }
     }
   };
